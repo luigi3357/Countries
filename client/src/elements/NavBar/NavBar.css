@@ -1,0 +1,99 @@
+.containerBtn{
+    display: block;
+    position: absolute;
+    margin-left: 33%;    
+}
+a{
+    text-decoration: none;
+}
+.containerCrear{
+    margin-left:-38%
+}
+.containerVolver{
+    margin-left: 115px;
+    margin-top: 4px;
+}
+.containerRefresh{
+    margin-left: 355px;
+    margin-top: -46px;
+}
+.btnCrear, .btnVolver, .btnRefresh{
+    position: relative;
+    top: 0px; 
+    padding: 5px 8px;
+    /* margin: 30px; */
+    color: #ffffff; /* color */    
+    text-decoration: none; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; /* Espaciado entre caracteres */
+    font-size: 7px;
+    transition: 0.5s; /* Tiempo de transición */
+    overflow: hidden; 
+    -webkit-box-reflect: below 2px linear-gradient(transparent, rgba(255, 255, 255, 0.2));   
+}
+
+.btnCrear:hover, .btnVolver:hover, .btnRefresh:hover{
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 150px #ffffff; 
+    transition: 0.2s;
+    transition-delay: 0.5s; /* tiempo de espera */
+}
+
+.btnCrear::before, .btnRefresh::before{
+    content: ''; /* Contenido */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid #21ebff; 
+    border-left: 2px solid #21ebff;
+    transition: 0.8s;
+    transition-delay: 0.5s;
+}
+.btnVolver::before{
+    content: ''; /* Contenido */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #ff2121; 
+    border-left: 2px solid #ff2121;
+    transition: 0.8s;
+    transition-delay: 0.5s;
+}
+
+.btnCrear::after, .btnRefresh::after{
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 6px;
+    height: 6px;
+    border-bottom: 2px solid #21ebff;
+    border-right: 2px solid #21ebff;
+    transition: 0.8s;
+    transition-delay: 0.5s;
+}
+.btnVolver::after{
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 8px;
+    height: 8px;
+    border-bottom: 2px solid #ff2121;
+    border-right: 2px solid #ff2121;
+    transition: 0.8s;
+    transition-delay: 0.5s;
+}
+
+
+.btnCrear:hover::after, .btnVolver:hover::after, .btnRefresh:hover::after,.btnCrear:hover::before, .btnVolver:hover::before, .btnRefresh:hover::before{
+    width: 67%;
+    height: 61%;
+    transition-delay: 0s;
+}
+ 

@@ -1,0 +1,89 @@
+.landingImage{
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    /* opacity: .8; */
+}
+
+
+
+.landingTitle{
+    position: relative;
+    text-align: center;
+}
+
+.landingSpan{
+    color: #fff;
+	margin-top: 30%;
+	text-shadow:
+		0 0 5px rgb(0, 178, 255),
+		0 0 10px rgba(0,178,255,1),
+		0 0 20px rgba(0,178,255,1),
+		0 0 40px rgba(38,104,127,1),
+		0 0 80px rgba(38,104,127,1),
+		0 0 90px rgba(38,104,127,1),
+		0 0 100px rgba(38,104,127,1),
+		0 0 140px rgba(38,104,127,1),
+		0 0 180px rgba(38,104,127,1);
+}
+.landingContainer{
+    position: relative;
+    text-align: center;
+    margin-top: 90px;
+}
+.landingLink{
+    position: relative; 
+    padding: 10px 30px;
+    margin: 30px;
+    color: #ffffff; /* color */    
+    text-decoration: none; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; /* Espaciado entre caracteres */
+    font-size: 15px;
+    transition: 0.5s; /* Tiempo de transición */
+    overflow: hidden; 
+    -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(218, 74, 74, 0.2));   
+}
+.landingButton:hover{
+    background: #21ebff;
+    color: #111;
+    box-shadow: 0 0 100px #fbfbfb; 
+    transition: 0.2s;
+    transition-delay: 0.5s; /* tiempo de espera */
+}
+
+.landingButton::before{
+    content: ''; /* Contenido */
+    position: absolute;
+    top: 7px;
+    left: 27px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #21ebff; 
+    border-left: 2px solid #21ebff;
+    transition: 0.8s;
+    transition-delay: 0.5s;
+}
+.landingButton::after{
+    content: '';
+    position: absolute;
+    bottom: 7px;
+    right: 27px;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid #21ebff;
+    border-right: 2px solid #21ebff;
+    transition: 0.8s;
+    transition-delay: 0.5s;
+}
+
+.landingButton:hover::before,.landingButton:hover::after {
+    width: 67%;
+    height: 61%;    
+    transition-delay: 0s;
+}
