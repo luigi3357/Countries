@@ -1,28 +1,42 @@
 .pageNumbers {
     list-style: none;
     display: flex;
+    margin-top: 7%;
+    /* justify-content: center; */
+    margin-left: 34%;
 }
 
 .pageNumbers li{
 padding: 10px;
-border: 1px solid black;
+height: 10px;
+border: 1px solid rgb(3, 3, 3);
+background: rgb(179, 240, 245);
+text-align: center;
 cursor:pointer;
 }
-
-.pageNumbers li.active{
+.pageNumbers li p {
+    margin-top: -5px;
+}
+.pageNumbers li.active{    
     background-color: black;
     color: wheat;
 }
-
+.pButton{
+    top: -15px !important;
+    font-size: 25px;
+    /* font-family: Arial black; */
+}
 .pageNumbers li button{
+    margin-top: -45px;    
     background-color: transparent;
     border: none;
-    color: wheat;
-    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+    font-size: 25px;   
     cursor: pointer;
 }
 
 .pageNumbers li button:hover{
     background-color: black;
+    height: 22px;
     color: wheat;
 }

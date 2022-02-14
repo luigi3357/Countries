@@ -1,5 +1,6 @@
+
 .containerBtn{
-    display: block;
+    /* display: block; */
     position: absolute;
     margin-left: 33%;    
 }
@@ -11,25 +12,31 @@ a{
 }
 .containerVolver{
     margin-left: 115px;
-    margin-top: 4px;
+    margin-top: 12px;
 }
 .containerRefresh{
+    position: relative;
     margin-left: 355px;
-    margin-top: -46px;
+    margin-top: -60px;
 }
 .btnCrear, .btnVolver, .btnRefresh{
+    background-color: transparent;
+    border: none;
     position: relative;
-    top: 0px; 
+    top: 2px; 
     padding: 5px 8px;
     /* margin: 30px; */
     color: #ffffff; /* color */    
     text-decoration: none; 
     text-transform: uppercase; 
     letter-spacing: 1px; /* Espaciado entre caracteres */
-    font-size: 7px;
+    font-size: 13px;
     transition: 0.5s; /* Tiempo de transición */
     overflow: hidden; 
     -webkit-box-reflect: below 2px linear-gradient(transparent, rgba(255, 255, 255, 0.2));   
+}
+.btnVolver{
+    left: 55px;
 }
 
 .btnCrear:hover, .btnVolver:hover, .btnRefresh:hover{

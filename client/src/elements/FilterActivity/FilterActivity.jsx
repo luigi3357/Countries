@@ -1,22 +1,25 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterByActivity } from "../../action/action";
+import "./FilterActivity.css"
 
 
-export default function FilterActivity({setCurrentPage}){
+export default function FilterActivity({setMaxPageNumberLimit, setMinPageNumberLimit,setCurrentPage}){
 
  const allActivity = useSelector((state)=>state.activity)
 
  const dispatch = useDispatch();
  
  function handleChange(e){
-     dispatch(filterByActivity(e.target.value))
-     setCurrentPage(1)
+     dispatch(filterByActivity(e.target.value));
+     setCurrentPage(1);
+     setMaxPageNumberLimit(5);
+     setMinPageNumberLimit(0);
  }
 
     return(
         <div>
-            <select defaultValue="disabled" onChange={e=>handleChange(e)}>
+            <select className="activity" defaultValue="disabled" onChange={e=>handleChange(e)}>
                 <option value="disabled" disabled>Buscar Actividad</option>
                 <option value="All">Todos</option>
                 {
@@ -26,6 +29,8 @@ export default function FilterActivity({setCurrentPage}){
                 }
                
             </select>
+
+            
         </div>
     )
 }

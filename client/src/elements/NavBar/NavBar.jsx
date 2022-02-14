@@ -9,7 +9,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import OrderPoblacion from "../OrderByPopulation/OrderPoblacion"
 import "./NavBar.css"
 
-export default function NavBar({ name, setName, setOrden, setCurrentPage }) {
+export default function NavBar({ name, setName, setOrden, setCurrentPage, setMaxPageNumberLimit, setMinPageNumberLimit, pageNumberLimit,maxPageNumberLimit,minPageNumberLimit, currentCountry }) {
     const dispatch = useDispatch();
 
     function handleClick(e) {
@@ -23,18 +23,18 @@ export default function NavBar({ name, setName, setOrden, setCurrentPage }) {
         <div className="containerNav">
             <div className="containerBtn">
                 <div className="containerCrear">
-                <Link to='/activity'>
-                    <a className="btnCrear" >Crear actividades</a>
+                <Link to='/home/activity'>
+                    <button className="btnCrear" >Crear actividades</button>
                 </Link>
                 </div>
                 <div className="containerVolver">
                 <Link to="/">
-                    <a className="btnVolver" >Volver</a>
+                    <button className="btnVolver" >Volver</button>
                 </Link>
                 </div>
                 <div className="containerRefresh">
                 <Link to="">
-                <a className="btnRefresh" onClick={e => { handleClick(e) }}>Recargar los Paises</a>
+                <button className="btnRefresh" onClick={e => { handleClick(e) }}>Recargar los Paises</button>
                 </Link>
                 </div>
                
@@ -43,23 +43,63 @@ export default function NavBar({ name, setName, setOrden, setCurrentPage }) {
             </div>
 
             <div>
-                <SearchBar name={name} setName={setName} setCurrentPage={setCurrentPage} />
+                <SearchBar 
+                name={name} 
+                setName={setName} 
+                setCurrentPage={setCurrentPage} 
+                pageNumberLimit={pageNumberLimit}
+                currentCountry={currentCountry}
+                minPageNumberLimit={minPageNumberLimit}
+                maxPageNumberLimit={maxPageNumberLimit}
+                setMaxPageNumberLimit={setMaxPageNumberLimit}
+                setMinPageNumberLimit={setMinPageNumberLimit}
+                />
             </div>
 
             <div>
-                <FilterActivity setCurrentPage={setCurrentPage} />
+                <FilterActivity 
+                setCurrentPage={setCurrentPage}
+                pageNumberLimit={pageNumberLimit}
+                minPageNumberLimit={minPageNumberLimit}
+                maxPageNumberLimit={maxPageNumberLimit}
+                setMaxPageNumberLimit={setMaxPageNumberLimit}
+                setMinPageNumberLimit={setMinPageNumberLimit}
+                />
             </div>
 
             <div>
-                <FilterContinente setCurrentPage={setCurrentPage} />
+                <FilterContinente
+                setCurrentPage={setCurrentPage}
+                pageNumberLimit={pageNumberLimit}
+                minPageNumberLimit={minPageNumberLimit}
+                maxPageNumberLimit={maxPageNumberLimit}
+                setMaxPageNumberLimit={setMaxPageNumberLimit}
+                setMinPageNumberLimit={setMinPageNumberLimit}
+                 />
             </div>
 
             <div>
-                <OrderName setOrden={setOrden} setCurrentPage={setCurrentPage} />
+                <OrderName 
+                setOrden={setOrden} 
+                setCurrentPage={setCurrentPage} 
+                pageNumberLimit={pageNumberLimit}
+                minPageNumberLimit={minPageNumberLimit}
+                maxPageNumberLimit={maxPageNumberLimit}
+                setMaxPageNumberLimit={setMaxPageNumberLimit}
+                setMinPageNumberLimit={setMinPageNumberLimit}
+                />
             </div>
 
             <div>
-                <OrderPoblacion setOrden={setOrden} setCurrentPage={setCurrentPage} />
+                <OrderPoblacion 
+                setOrden={setOrden} 
+                setCurrentPage={setCurrentPage} 
+                pageNumberLimit={pageNumberLimit}
+                minPageNumberLimit={minPageNumberLimit}
+                maxPageNumberLimit={maxPageNumberLimit}
+                setMaxPageNumberLimit={setMaxPageNumberLimit}
+                setMinPageNumberLimit={setMinPageNumberLimit}
+                />
             </div>
 
         </div>

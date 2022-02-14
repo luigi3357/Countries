@@ -26,6 +26,7 @@ router.get("/countries", async (req, res) => {
 })
 
 router.get("/countries/:id", async (req, res) => {
+  
   try {
     const id = req.params.id;
     let countryTotal = await infoDb()
@@ -51,21 +52,50 @@ router.post("/activity", async (req, res, next) => {
     temporada,
     paises,
   } = req.body
-  try {
-    const activityC ={
-      name: name.toLowerCase(),
-      dificultad,
-      duracion,
-      descripcion,
-      temporada,
-      paises,
+  try{  
+    const valdidateact = await Activity.findOne({
+      where: {
+        name: name,
+      },
+    });
+  
+    if (!valdidateact) {
+      const addAct = await Activity.create({
+        name: name.toLowerCase(),
+        dificultad: dificultad,
+        duracion: duracion,
+        temporada: temporada.toString(),
+        descripcion: descripcion,
+      });
+      const countrymatch = await Country.findAll({
+        where: {
+          name: paises,
+        },
+      });
+  
+      const resact = await addAct.addCountries(countrymatch);
+  
+      return res.send(resact);
     }
-    const activityCreated = await createActivity(activityC)
-    res.send("Creacion Exitosa")
-  } catch (error) {
-    next(error)
-  }
-})
+    
+    const countrymatch = await Country.findAll({
+      where: {
+        name: paises,
+      },
+    });
+    // console.log(addAct)
+    // console.log(countrymatch)
+  
+    const resact = await valdidateact.addCountries(countrymatch);
+  
+    return res.send(resact);
+  
+   }catch(error){
+     console.log(error)
+   }
+  });
+
+ 
 
 router.get("/Activity", async (req, res) => {
   const infoALL = await getActivity()
@@ -75,6 +105,72 @@ router.get("/Activity", async (req, res) => {
 router.get("/continente", async (req, res)=>{
   const infoALL = await filterContinente()
   res.send(infoALL)
+})
+
+router.get("/order/:order", async (req, res)=>{
+  let countryTotal = await infoDb()
+const {order} = req.params
+if(order ==="All"){
+  return res.send(countryTotal)
+}
+if(order === "asc"){
+ let ascendente = countryTotal.sort((a, b)=>{
+    if (a.name > b.name) return 1;
+    if (a.name < b.name) return -1;
+    return 0;
+})
+return res.send(ascendente)
+}
+if(order === "desc"){
+  let descendiente = countryTotal.sort((a, b)=>{
+    if (a.name > b.name) return -1;
+    if (a.name < b.name) return 1;
+    return 0;
+})
+return res.send(descendiente)
+}
+})
+
+router.get("/filter/:continente", async (req, res)=>{
+  let countryTotal = await infoDb()
+  let { continente }=req.params
+  if(continente==="All"){
+    res.send(countryTotal)
+  }else{
+    let filtro = countryTotal.filter(el=> el.continente.toLowerCase() === continente.toLowerCase())
+   return res.send(filtro)
+  }
+})
+
+router.put("/activity", async (req, res)=>{
+  const {
+    
+    name,
+    dificultad,
+    duracion,
+    descripcion,
+    temporada,   
+  } = req.body
+  let getactividad= await getActivity()
+let search = getactividad.filter(e=> e.name === name.toString()) 
+console.log(search)
+
+if(search.length){
+  const result = await Activity.update(
+    { 
+      dificultad: dificultad,
+      duracion: duracion,
+      descripcion: descripcion,
+      temporada: temporada.toString(),     
+     }, //what going to be updated
+    { where: { name: name }} // where clause
+  ) 
+  
+console.log(result,"mmmm")
+ return res.send(result)
+}else{
+  return res.send("La actividad no existe")
+}
 })
 
 module.exports = router;

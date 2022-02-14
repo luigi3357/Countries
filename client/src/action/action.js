@@ -8,9 +8,8 @@ import {
     GET_BY_NAME,
     GET_BY_CONTINENTE,
     ORDER_BY_NAME, 
-    ORDER_BY_POPULATION, 
-    POST_FORM ,
-    RESET_ID
+    ORDER_BY_POPULATION,     
+    RESET_ID,
 } from "../actionTypes/actionTypes";
 
 export function getAll(payload){
@@ -25,8 +24,7 @@ export function getAll(payload){
 
 export function getActivity(payload){
     return async (dispatch)=>{
-        let json = await axios.get("http://localhost:3001/Activity")
-        console.log(json.data)
+        let json = await axios.get("http://localhost:3001/Activity")                
         return dispatch({
             type: GET_ACTIVITY,
             payload: json.data
@@ -66,7 +64,15 @@ export function getByContinente (){
 
 export function postActivity(payload){
     return async (dispatch)=>{
+        console.log(payload)
         let json = await axios.post("http://localhost:3001/activity", payload)
+        return json
+    }
+}
+
+export function putActivity(payload){
+    return async (dispatch)=>{
+        let json = await axios.put("http://localhost:3001/activity", payload)
         return json
     }
 }
@@ -78,17 +84,29 @@ export function filterByActivity(payload){
     }
 }
 
-export function filterByContinente(payload){
-    return{
-        type:FILTER_BY_CONTINENTE,
-        payload
+export function filterByContinente(continente){
+    return async (dispatch)=>{
+        let json = await axios.get(`http://localhost:3001/filter/`+ continente)
+        return dispatch({
+            type: FILTER_BY_CONTINENTE,
+            payload: json.data
+        })
     }
 }
 
-export function orderByName(payload){
-    return{
-        type:ORDER_BY_NAME,
-        payload
+// export function filterByContinente(payload){
+//     return{
+//         type:FILTER_BY_CONTINENTE,
+//         payload
+//     }
+// }
+export function orderByName(order){
+    return async (dispatch)=>{
+        let json = await axios.get(`http://localhost:3001/order/`+ order)
+        return dispatch({
+            type: ORDER_BY_NAME,
+            payload: json.data
+        })
     }
 }
 

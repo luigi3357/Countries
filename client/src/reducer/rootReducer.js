@@ -9,7 +9,10 @@ import {
     ORDER_BY_NAME,
     ORDER_BY_POPULATION,
     POST_FORM,
-    RESET_ID
+    PUT_FORM,
+    RESET_ID,
+    DELETE_ACTIVITY,
+
 } from "../actionTypes/actionTypes";
 const initialState = {
     Country: [],
@@ -51,6 +54,10 @@ function rootReducer(state = initialState, action) {
                 return{
                     ...state
                 }
+                case PUT_FORM:
+                    return{
+                        ...state
+                    }
         case FILTER_BY_ACTIVITY:
             const all = state.CountryAux            
             const filtros = action.payload === "All" ? all : all.filter(e => e.Activities.map(el => el.name).toString() === action.payload)
@@ -59,26 +66,15 @@ function rootReducer(state = initialState, action) {
                 Country: filtros
             }
         case FILTER_BY_CONTINENTE:
-            const allContinente = state.CountryAux;
-            const filtro = action.payload === "All" ? allContinente : allContinente.filter(e => e.continente === action.payload)
             return {
                 ...state,
-                Country: filtro
+                Country: action.payload
             }
-            case ORDER_BY_NAME:
-                              
-                const order = action.payload === "asc" ?    state.Country.sort((a, b)=>{
-                    if (a.name > b.name) return 1;
-                    if (a.name < b.name) return -1;
-                    return 0;
-                }): state.Country.sort((a, b)=>{
-                    if (a.name > b.name) return -1;
-                    if (a.name < b.name) return 1;
-                    return 0;
-                })
+            case ORDER_BY_NAME:                              
+                
                 return{
                     ...state,
-                    Country: order
+                    Country: action.payload
                 }
                 case ORDER_BY_POPULATION:
                     const order2 = action.payload === "asc" ?    state.Country.sort((a, b)=>{
@@ -99,6 +95,11 @@ function rootReducer(state = initialState, action) {
                             ...state,
                             paramsd: []
                         }
+                        case DELETE_ACTIVITY:
+                            return {
+                                ...state,
+                                activity: action.payload,
+                            }
                     
         default:
             return state

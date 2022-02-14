@@ -1,0 +1,29 @@
+.continente{    
+    position: absolute; /*posicion*/
+    top: 36px; /* lo separo de la parte de arriba*/
+    margin-left: 75%; /*lo separo del borde*/
+    background-color: transparent;/*le saca el background*/
+    background: #ffffff;
+    padding: 5px 8px;
+    color: rgb(248, 0, 0); /* color */    
+    text-decoration: none;  /*saca decoraciones*/
+    text-transform: uppercase; /*pasa a mayuscula las letras*/
+    letter-spacing: 2px; /* Espaciado entre caracteres */
+    font-size: 13px;/*fuente del texto*/
+    transition: 0.5s; /* Tiempo de transición */
+    overflow: hidden; 
+    border: 2px solid #ff2121; 
+    text-align: center;
+    -webkit-box-reflect: below 2px linear-gradient(transparent, rgba(255, 255, 255, 0.2));      
+}
+.continente option{
+    background: #000;
+    font-size: 15px;
+    padding: 5px 8px;
+    border: none;
+}
+.continente option:hover{
+background:#ffffff;
+font-size: 13px;/*fuente del texto*/
+color: #000;
+}

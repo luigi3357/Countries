@@ -1,0 +1,168 @@
+.containerForm{
+    position: fixed;
+    height:100%;
+    width:100%;
+    background: linear-gradient(180deg,rgba(1,77,113,1) 20%, rgb(0, 110, 130) 65%,  rgb(0, 109, 140) 74%);
+    color: wheat;
+}
+.containerTotal{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top: 10%;
+    
+}
+.containerTotal2{
+    margin-top: 5%;
+    width:400px;   
+    height: 200%;
+    box-shadow:
+    0 0 5px rgb(0, 178, 255),
+    0 0 10px rgba(0,178,255,1),
+    0 0 20px rgba(0,178,255,1),
+    0 0 40px rgba(38,104,127,1),
+    0 0 80px rgba(38,104,127,1),
+    0 0 90px rgba(38,104,127,1),
+    0 0 100px rgba(38,104,127,1),
+    0 0 140px rgba(38,104,127,1),
+    0 0 180px rgba(38,104,127,1); 
+    height: 37rem;
+    overflow-y: scroll;
+    /* overflow-x: none; */
+}
+.containerTotal2 form{
+    display: flex;
+    flex-direction:column;
+    align-items: center;   
+}
+.h1Form{
+    color: #fff;
+	text-shadow:
+		0 0 5px rgb(0, 178, 255),
+		0 0 10px rgba(0,178,255,1),
+		0 0 20px rgba(0,178,255,1),
+		0 0 40px rgba(38,104,127,1),
+		0 0 80px rgba(38,104,127,1),
+		0 0 90px rgba(38,104,127,1),
+		0 0 100px rgba(38,104,127,1),
+		0 0 140px rgba(38,104,127,1),
+		0 0 180px rgba(38,104,127,1);
+}
+.containerBtnForm{
+display: flex;
+justify-content:center;
+}
+.containerFormLink,  .butonFormCreated {
+    border: none;  
+    height: 25px;
+    width: 150px;
+    text-transform: uppercase;
+    background: linear-gradient(180deg,rgb(255, 255, 255) 20%, rgb(211, 211, 211) 65%,  rgb(195, 195, 195) 74%);
+    margin-left: 6px;
+}
+
+.butonFormCreated:disabled{
+    color: rgb(161, 161, 161);        
+}
+.inputName{
+    border: none;
+    margin-left: 1%;
+    height: 1.2rem;
+    width: 10rem;
+    background: linear-gradient(180deg,rgb(255, 255, 255) 20%, rgb(211, 211, 211) 65%,  rgb(195, 195, 195) 74%);
+    margin-left: 6px;
+}
+.inputDificultad, .inputDuracion,.textArea, .selectChild, .selectChild{
+    border: none;
+    margin-left: 1%;
+    height: 1.2rem;
+    width: 9.4rem;
+    background: linear-gradient(180deg,rgb(255, 255, 255) 20%, rgb(211, 211, 211) 65%,  rgb(195, 195, 195) 74%);
+    margin-left: 6px;
+    
+}
+.inputDuracion{
+    width: 9.6rem;
+}
+.textArea{
+    resize: none;
+    width: 150%;
+    height:60px;
+    margin-left: -32%;
+}
+.containerNameForm, .containerDificultad, .containeDuracion, .containerDescripcion, .containerSelect{
+    margin-top: 4%;
+}
+.selectChild{
+width: 16rem;
+margin-left:-3%;
+box-shadow:
+0 0 5px rgb(0, 178, 255),
+0 0 10px rgba(0,178,255,1),
+0 0 20px rgba(0,178,255,1),
+0 0 40px rgba(38,104,127,1),
+0 0 80px rgba(38,104,127,1),
+0 0 90px rgba(38,104,127,1),
+0 0 100px rgba(38,104,127,1),
+0 0 140px rgba(38,104,127,1),
+0 0 180px rgba(38,104,127,1); 
+}
+.ContainerPaises{
+    
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    /* display: flex; */
+    /* flex-direction:row; */
+    border: solid 1px red;
+    width:96%;
+    /* height: 20px; */
+    align-items: center;
+}
+.childPaises{
+    display: flex;
+    border: solid 1px rgb(36, 34, 34);
+    flex-direction: row;
+    justify-content: space-between;
+    letter-spacing:1px;
+     text-shadow:
+     0 0 5px rgb(0, 178, 255),
+     0 0 10px rgba(0,178,255,1),
+     0 0 20px rgba(0,178,255,1),
+     0 0 40px rgba(38,104,127,1);
+}
+.childPaises button{
+    margin-top: 22px;
+    background: red;
+    color: white;    
+    padding:1px;
+    font-size: 12px;
+    height: 15px;
+    width: 15px;
+}
+.containerChecbox b{
+    color: #fff;
+    text-shadow:
+0 0 5px rgb(0, 178, 255),
+0 0 10px rgba(0,178,255,1),
+0 0 20px rgba(0,178,255,1),
+0 0 40px rgba(38,104,127,1);
+}
+.checkboxChild{
+letter-spacing:1px;
+}
+
+.errors{
+    color: red;
+    /* margin-top:-2px; */
+    /* margin-left: 8px */
+}
+.errorsTemporada{
+    display: flex;
+    /* position: absolute; */
+    /* margin-top: 9%; */
+    display: inline-block;
+    color: red;
+}
+.errorsPaises{
+    color: red;
+}

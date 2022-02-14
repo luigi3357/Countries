@@ -1,0 +1,29 @@
+.activity{    
+    position: relative;
+    top: 3px;
+    margin-left: 2%;
+    /* background-color: transparent; */
+    background: #ffffff;
+    border: none;    
+    padding: 5px 8px;
+    color: rgb(255, 0, 0); /* color */    
+    text-decoration: none; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; /* Espaciado entre caracteres */
+    font-size: 13px;
+    transition: 0.5s; /* Tiempo de transición */
+    overflow: hidden; 
+    border: 2px solid #ff2121; 
+    text-align: center;
+    -webkit-box-reflect: below 2px linear-gradient(transparent, rgba(255, 255, 255, 0.2));       
+}
+.activity option{
+    background: #000;
+    font-size: 15px;
+    padding: 5px 8px;
+    border: none;
+}
+.activity option:hover{
+background:#ffffff;
+color: #000;
+}

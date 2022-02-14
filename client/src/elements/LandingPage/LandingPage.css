@@ -49,6 +49,18 @@
     overflow: hidden; 
     -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(218, 74, 74, 0.2));   
 }
+.landingButton{
+    border: none;
+    background-color: transparent;
+    color: #ffffff; /* color */    
+    text-decoration: none; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; /* Espaciado entre caracteres */
+    font-size: 15px;
+    transition: 0.5s; /* Tiempo de transición */
+    overflow: hidden; 
+    -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(218, 74, 74, 0.2)); 
+}
 .landingButton:hover{
     background: #21ebff;
     color: #111;

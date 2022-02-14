@@ -1,29 +1,29 @@
 .inputSearch{
     position: absolute;
-    margin-left: 45%;
+    margin-left: 46%;
     margin-top: 4.3px;
-    height: 20px;
-    width: 70px;
+    height: 28px;
+    width: 80px;
     border-radius: 50px;
     border: none;
     transition: 1s;        
 }
 .inputSearch:hover{
     position: absolute;
-    margin-left: 36%;
+    margin-left: 38%;
     margin-top: 4px;
-    height: 20px;
-    width: 142px;
+    height: 28px;
+    width: 180px;
     border:none;
     border-radius: 50px;
     transition: 1s;
 }
 .inputSearch:focus{
     position: absolute;
-    margin-left: 36%;
+    margin-left: 38%;
     margin-top: 4px;
-    height: 20px;
-    width: 142px;
+    height: 28px;
+    width: 180px;
     border:none;
     border-radius: 50px;
     transition: 1s;
@@ -31,11 +31,12 @@
 
 .btnSearch{
     position: relative;
-    background: #fff;    
-margin-left: 48%;
-height: 17px;
+    background: #fff;   
+    margin-top: 4px; 
+margin-left: 328%;
+height: 28px;
 border-radius: 50px;
-width: 40px;
+width: 41px;
 font-size: 9px;
 border: none;
 }

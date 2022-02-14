@@ -1,14 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import './Paginado.css'
 
-export  const Paginado = ({allCountry, paginado, currentPage, setCurrentPage, setCountryPerPage, CountryPerPage })=>{
-    
-  
-
-    const [pageNumberLimit, setPageNumberLimit] = useState(5)
-    const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5)
-    const [minPageNumberLimit, setMinPageNumberLimit] = useState(0)
-
+export  const Paginado = ({ allCountry, paginado, currentPage, setCurrentPage, setCountryPerPage, CountryPerPage, setMaxPageNumberLimit, setMinPageNumberLimit, pageNumberLimit,maxPageNumberLimit,minPageNumberLimit })=>{
 
     const pageNumber = []
     if(currentPage === 1){
@@ -19,21 +12,8 @@ export  const Paginado = ({allCountry, paginado, currentPage, setCurrentPage, se
     for (let i = 0; i <= Math.ceil(allCountry/CountryPerPage); i++) {
         pageNumber.push(i);               
     }
-  
 
-   const renderPage = pageNumber.map(n =>{
-       if(n < maxPageNumberLimit + 1 && n > minPageNumberLimit){
-        return(
-            <li key={n} className={currentPage === n? "active": null} onClick={()=> paginado(n)} >
-            {n}
-            </li>           
-        )
-       }else{
-           return null
-       }     
-     })
-
-     function handleNextBtn (){
+    function handleNextBtn (){
         setCurrentPage(currentPage + 1)
         if(currentPage +1 > maxPageNumberLimit){
             setMaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit)
@@ -47,23 +27,34 @@ export  const Paginado = ({allCountry, paginado, currentPage, setCurrentPage, se
             setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit)
             setMinPageNumberLimit(minPageNumberLimit - pageNumberLimit)
         }
-     }
-     
+     } 
+
+   const renderPage = pageNumber.map(n =>{
+       if(n < maxPageNumberLimit + 1 && n > minPageNumberLimit){
+        return(
+            <li key={n} className={currentPage === n? "active": null} onClick={()=> paginado(n)} >
+            <p>{n}</p>
+            </li>           
+        )
+       }else{
+           return null
+       }     
+     })
+
+ 
     return (     
             <ul key="alt"className='pageNumbers'>
-               <li><button 
+               <li><button className 
                onClick={()=>{handlePrevBtn()}}
                disabled={currentPage === pageNumber[1] ? true: false}
-               >&#8810;</button></li>               
-                
-                {renderPage} 
-
+               ><p className="pButton">&#8920;</p></button></li>   
+                {renderPage}
                <li>
                <button 
                onClick={()=>{handleNextBtn()}}
                disabled={currentPage === pageNumber[pageNumber.length - 1] ? true: false}
 
-               >&#8811;</button>
+               ><p className="pButton">&#8921;</p></button>
                </li>
             </ul>       
     )

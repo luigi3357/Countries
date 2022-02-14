@@ -1,8 +1,6 @@
 require("dotenv").config();
 const { Country, Activity } = require('../db.js');
 const axios = require('axios')
-const { Sequelize } = require('sequelize');
-const { API_KEY } = process.env;
 
 async function infoApi(){
     const countryData = await axios.get("https://restcountries.com/v3/all")
@@ -27,8 +25,7 @@ async function infoDb(){
     return await Country.findAll({
         include:{
             model: Activity,
-            attributes:["name", "id", "descripcion","dificultad","duracion","temporada"],
-            
+            attributes:["name", "id", "descripcion","dificultad","duracion","temporada"],            
             through:{
                 attributes:[]
             }
@@ -59,6 +56,10 @@ function convert (str){
  async function createActivity(activity){
     let { name, descripcion, dificultad, duracion, temporada, paises } = activity;
      
+    const countryDb = await Country.findAll({
+        where: { name: paises }
+      })
+       
     const activityCreated = await Activity.create({
         name,
         dificultad: dificultad.trim(),
@@ -66,9 +67,7 @@ function convert (str){
         descripcion,
         temporada: convert(temporada),
       })
-      const countryDb = await Country.findAll({
-        where: { name: paises }
-      })
+      
       activityCreated.addCountry(countryDb)
  }
 

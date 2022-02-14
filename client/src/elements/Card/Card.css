@@ -1,0 +1,41 @@
+
+.containerCard{
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   border: 2px dashed #ff0000;
+   border-radius: 50px;
+   height: 220px;
+   width: 320px;
+   background: rgba(130, 136, 151, 0.466);
+   background-image: url("https://www.hipertelas.com.ar//product_images/s/544/w1_085_1__64625_tiny.jpg");
+   background-size: 100% 100%;
+}
+
+.nameCard{
+    display: inline-block;
+    margin-top: 8px;
+    text-align: center;
+    margin-left: 33%;
+    color: rgb(255, 255, 255);
+    font-family:sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px; /* Espaciado entre caracteres */
+    text-transform: uppercase; 
+    /* margin-left: 20%; */
+}
+
+.imageCard{
+    margin-left: 8%;
+    margin-top: 13px;
+    width: 280px;
+    height: 145px;
+}
+
+.continenteCard{
+    text-align: center;
+    margin-top: 2px;
+    color: #fff;
+    letter-spacing: 1px; /* Espaciado entre caracteres */
+    font-family:sans-serif;
+    font-weight: 600;    
+}
