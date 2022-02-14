@@ -43,7 +43,7 @@ conn.sync({ force: true }).then(async () => {
       })
     });
 
-    // const map = activity.map(e => createActivity(e))
+    const map = activity.map(e => createActivity(e))
 
   } catch (error) {
     console.log(error)

@@ -67,7 +67,7 @@ export default function FormularioPut() {
         function handleSubmit(e) {
             e.preventDefault();
             dispatch(putActivity(input));
-            alert('Creado Con Exito');
+            alert('Actualizado Con Exito');
             setInput({
                 dificultad: "",
                 duracion: "",
@@ -186,7 +186,7 @@ export default function FormularioPut() {
                                     className="butonFormCreated"
                                     type="submit"
 
-                                >Crear</button>
+                                >Actualizar</button>
                             </div>
 
                         </form>

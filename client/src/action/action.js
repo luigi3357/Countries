@@ -12,16 +12,27 @@ import {
     RESET_ID,
 } from "../actionTypes/actionTypes";
 
+// export function getAll(payload){
+//     return async(dispatch)=>{
+//         let json = await axios.get("http://localhost:3001/countries")
+//         return dispatch ({
+//             type: GET_ALL,
+//             payload: json.data
+//         })
+//     }
+// }
 export function getAll(payload){
-    return async(dispatch)=>{
-        let json = await axios.get("http://localhost:3001/countries")
-        return dispatch ({
-            type: GET_ALL,
-            payload: json.data
+    return (dispatch)=>{
+        axios.get("http://localhost:3001/countries")
+        .then(response=>{
+            return dispatch ({
+                type: GET_ALL,
+                payload: response.data
+            })
         })
+       
     }
 }
-
 export function getActivity(payload){
     return async (dispatch)=>{
         let json = await axios.get("http://localhost:3001/Activity")                

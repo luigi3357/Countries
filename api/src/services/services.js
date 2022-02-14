@@ -56,20 +56,30 @@ function convert (str){
  async function createActivity(activity){
     let { name, descripcion, dificultad, duracion, temporada, paises } = activity;
      
-    const countryDb = await Country.findAll({
-        where: { name: paises }
-      })
-       
-    const activityCreated = await Activity.create({
-        name,
-        dificultad: dificultad.trim(),
-        duracion,
-        descripcion,
-        temporada: convert(temporada),
-      })
-      
-      activityCreated.addCountry(countryDb)
+    
+    const valdidateact = await Activity.findOne({
+        where: {
+          name: name,
+        },
+      });
+    
+      if (!valdidateact) {
+        const addAct = await Activity.create({
+          name: name.toLowerCase(),
+          dificultad: dificultad,
+          duracion: duracion,
+          temporada: temporada.toString(),
+          descripcion: descripcion,
+        });
+        const countrymatch = await Country.findAll({
+          where: {
+            name: paises,
+          },
+        });
+    
+        const resact = await addAct.addCountries(countrymatch);
  }
+}
 
  async function filterContinente(){
      const info = await infoDb()

@@ -158,10 +158,10 @@ console.log(search)
 if(search.length){
   const result = await Activity.update(
     { 
-      dificultad: dificultad,
-      duracion: duracion,
-      descripcion: descripcion,
-      temporada: temporada.toString(),     
+      dificultad: dificultad? dificultad: search.dificultad,
+      duracion: duracion? duracion: search.duracion,
+      descripcion: descripcion?descripcion: search.descripcion,
+      temporada: temporada?temporada.toString(): search.descripcion,     
      }, //what going to be updated
     { where: { name: name }} // where clause
   ) 
