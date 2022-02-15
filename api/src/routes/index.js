@@ -164,9 +164,7 @@ if(search.length){
       temporada: temporada?temporada.toString(): search.descripcion,     
      }, //what going to be updated
     { where: { name: name }} // where clause
-  ) 
-  
-console.log(result,"mmmm")
+  )   
  return res.send(result)
 }else{
   return res.send("La actividad no existe")

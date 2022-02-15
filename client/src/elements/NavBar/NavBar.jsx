@@ -16,6 +16,8 @@ export default function NavBar({ name, setName, setOrden, setCurrentPage, setMax
         e.preventDefault();
         dispatch(getAll());
         setCurrentPage(1)
+        setMaxPageNumberLimit(5);
+        setMinPageNumberLimit(0);
     }
 
 

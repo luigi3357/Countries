@@ -11,7 +11,7 @@ export default function Home() {
     const dispatch = useDispatch()
 
     const allCountry = useSelector(state => state.Country)
-    const [name, setName] = useState("");
+    const [name, setName] = useState(""); 
     const [orden, setOrden] = useState(``);
 
 
