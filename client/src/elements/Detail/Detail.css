@@ -101,6 +101,7 @@ margin-top: -20%;
     flex-wrap: wrap;
     justify-content: space-around;
     width: 49.8%;
+    margin-top: 5%;
     /* border: solid 1px #fff; */
 }
 .renderActivityDetail, .pNotiene{

@@ -1,21 +1,23 @@
 .containerForm{
-    position: fixed;
-    height:100%;
+    /* position: ; */
+    height:950px;
     width:100%;
     background: linear-gradient(180deg,rgba(1,77,113,1) 20%, rgb(0, 110, 130) 65%,  rgb(0, 109, 140) 74%);
     color: wheat;
+    margin-top: -5%;
+    z-index: -1;
 }
 .containerTotal{
     display: flex;
     flex-direction:column;
     align-items: center;
-    margin-top: 10%;
+    margin-top: 3%;
     
 }
 .containerTotal2{
-    margin-top: 5%;
+    margin-top: 2%;
     width:400px;   
-    height: 200%;
+    height: 100%;
     box-shadow:
     0 0 5px rgb(0, 178, 255),
     0 0 10px rgba(0,178,255,1),
@@ -26,8 +28,8 @@
     0 0 100px rgba(38,104,127,1),
     0 0 140px rgba(38,104,127,1),
     0 0 180px rgba(38,104,127,1); 
-    height: 37rem;
-    overflow-y: scroll;
+    /* height: 37rem; */
+    /* overflow-y: scroll; */
     /* overflow-x: none; */
 }
 .containerTotal2 form{
@@ -113,14 +115,14 @@ box-shadow:
     grid-template-columns: repeat(3,1fr);
     /* display: flex; */
     /* flex-direction:row; */
-    border: solid 1px red;
+    /* border: solid 1px red; */
     width:96%;
     /* height: 20px; */
     align-items: center;
 }
 .childPaises{
     display: flex;
-    border: solid 1px rgb(36, 34, 34);
+    /* border: solid 1px rgb(36, 34, 34); */
     flex-direction: row;
     justify-content: space-between;
     letter-spacing:1px;

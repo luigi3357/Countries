@@ -1,11 +1,12 @@
 .Order{    
-    position: absolute;
-    top: 35px;
-    margin-left: 55%;
+    /* position: absolute; */
+    /* top: 35px; */
+    /* margin-left: 55%; */
+    width: 10rem;
     background-color: transparent;
     background: #fff;
     border: none;    
-    padding: 5px 8px;
+    /* padding: 5px 8px; */
     /* margin: 30px; */
     color: #2142ff; /* color */    
     text-decoration: none; 

@@ -16,10 +16,12 @@ router.get("/countries", async (req, res) => {
     let countryTotal = await infoDb()
     const name = req.query.name
     if (name) {
+      if(countryTotal.length > 0){
       const filterDb = countryTotal.filter(el => el.name.toLowerCase() === name.toLowerCase())
       filterDb.length ?
         res.status(200).json(filterDb) :
         res.status(404).json('No se encuentra su pais')
+      }
     } else {
       return res.json(countryTotal)
     } 

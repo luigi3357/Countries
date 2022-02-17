@@ -1,24 +1,26 @@
+.containerNav{
+    /* border: solid 1px red; */
+    width: 100%;
+}
 
 .containerBtn{
-    /* display: block; */
-    position: absolute;
-    margin-left: 33%;    
+    display: flex;
+    /* border: solid 1px red; */
+    /* width: 167%; */
+    margin-top: 1%;
+    justify-content: space-around;
 }
+
+.containerAllFiltros{
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-around;
+}
+
 a{
     text-decoration: none;
 }
-.containerCrear{
-    margin-left:-38%
-}
-.containerVolver{
-    margin-left: 115px;
-    margin-top: 12px;
-}
-.containerRefresh{
-    position: relative;
-    margin-left: 355px;
-    margin-top: -60px;
-}
+
 .btnCrear, .btnVolver, .btnRefresh{
     background-color: transparent;
     border: none;
@@ -35,9 +37,7 @@ a{
     overflow: hidden; 
     -webkit-box-reflect: below 2px linear-gradient(transparent, rgba(255, 255, 255, 0.2));   
 }
-.btnVolver{
-    left: 55px;
-}
+
 
 .btnCrear:hover, .btnVolver:hover, .btnRefresh:hover{
     background: #ffffff;
@@ -59,6 +59,7 @@ a{
     transition: 0.8s;
     transition-delay: 0.5s;
 }
+
 .btnVolver::before{
     content: ''; /* Contenido */
     position: absolute;
@@ -84,6 +85,7 @@ a{
     transition: 0.8s;
     transition-delay: 0.5s;
 }
+
 .btnVolver::after{
     content: '';
     position: absolute;
@@ -97,10 +99,8 @@ a{
     transition-delay: 0.5s;
 }
 
-
 .btnCrear:hover::after, .btnVolver:hover::after, .btnRefresh:hover::after,.btnCrear:hover::before, .btnVolver:hover::before, .btnRefresh:hover::before{
     width: 67%;
     height: 61%;
     transition-delay: 0s;
 }
- 

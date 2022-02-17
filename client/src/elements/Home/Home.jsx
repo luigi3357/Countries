@@ -14,7 +14,6 @@ export default function Home() {
     const [name, setName] = useState(""); 
     const [orden, setOrden] = useState(``);
 
-
     const [currentPage, setCurrentPage] = useState(1);
     const [CountryPerPage, setCountryPerPage] = useState(9);
     const indexLastCountry = currentPage * CountryPerPage;

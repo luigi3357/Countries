@@ -128,23 +128,23 @@ const allCountries = allCountry.sort((a, b)=>{
         
         return errors;
     }
-  
+  const asd = input.descripcion.length
+  console.log(asd)
     useEffect(() => {
         if (
+            // !input.descripcion.length > 5000 &&
             !input.paises.length -1 &&
             !input.temporada.length -1 &&
             !errors.hasOwnProperty("name") &&
             !errors.hasOwnProperty("descripcion") &&
             !errors.hasOwnProperty("dificultad") &&
-            !errors.hasOwnProperty("duracion") 
-            // !errors.hasOwnProperty("temporada")
-            // !errors.hasOwnProperty("paises")
+            !errors.hasOwnProperty("duracion")           
         ) {
             setDisabled(false);
         } else {
             setDisabled(true);
         }
-    }, [errors, setDisabled,input.temporada.length,input.paises]);
+    }, [errors, setDisabled,input.temporada.length,input.paises, input.descripcion.length]);
 
 
     return (
@@ -225,6 +225,10 @@ const allCountries = allCountry.sort((a, b)=>{
                 {errors.descripcion && (
                     <p className="errors" >{errors.descripcion}</p>
                 )}
+                {
+                input.descripcion && input.descripcion.length > 5000 ? 
+                <p className="errors">Maximo 5000 caracteres</p>: null
+                }
 
                 </div>               
 

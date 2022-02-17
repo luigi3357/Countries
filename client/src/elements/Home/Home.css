@@ -1,9 +1,9 @@
 .imgHome{
-   position: absolute;
+   position: fixed;
     width: 100%;
     left: 50%;
     top: 55%;
-    height: 143%;
+    height: 100%;
     object-fit: cover;
     transform: translate(-50%,-50%);
     z-index: -1;

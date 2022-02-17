@@ -1,12 +1,8 @@
 .population{    
-    position: absolute;
-    top: 35px;
-    margin-left: 23%;
+    width: 10rem;
     background-color: transparent;
     background: #fff;
     border: none;    
-    padding: 5px 8px;
-    /* margin: 30px; */
     color: #2142ff; /* color */    
     text-decoration: none; 
     text-transform: uppercase; 

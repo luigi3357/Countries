@@ -29,22 +29,7 @@ export default function NavBar({ name, setName, setOrden, setCurrentPage, setMax
                     <button className="btnCrear" >Crear actividades</button>
                 </Link>
                 </div>
-                <div className="containerVolver">
-                <Link to="/">
-                    <button className="btnVolver" >Volver</button>
-                </Link>
-                </div>
-                <div className="containerRefresh">
-                <Link to="">
-                <button className="btnRefresh" onClick={e => { handleClick(e) }}>Recargar los Paises</button>
-                </Link>
-                </div>
-               
-               
-               
-            </div>
-
-            <div>
+                <div>
                 <SearchBar 
                 name={name} 
                 setName={setName} 
@@ -58,6 +43,16 @@ export default function NavBar({ name, setName, setOrden, setCurrentPage, setMax
                 />
             </div>
 
+                <div className="containerRefresh">
+                <Link to="">
+                <button className="btnRefresh" onClick={e => { handleClick(e) }}>Recargar los Paises</button>
+                </Link>
+                </div>        
+               
+            </div>
+            
+            <div className="containerAllFiltros">
+
             <div>
                 <FilterActivity 
                 setCurrentPage={setCurrentPage}
@@ -67,17 +62,6 @@ export default function NavBar({ name, setName, setOrden, setCurrentPage, setMax
                 setMaxPageNumberLimit={setMaxPageNumberLimit}
                 setMinPageNumberLimit={setMinPageNumberLimit}
                 />
-            </div>
-
-            <div>
-                <FilterContinente
-                setCurrentPage={setCurrentPage}
-                pageNumberLimit={pageNumberLimit}
-                minPageNumberLimit={minPageNumberLimit}
-                maxPageNumberLimit={maxPageNumberLimit}
-                setMaxPageNumberLimit={setMaxPageNumberLimit}
-                setMinPageNumberLimit={setMinPageNumberLimit}
-                 />
             </div>
 
             <div>
@@ -91,6 +75,11 @@ export default function NavBar({ name, setName, setOrden, setCurrentPage, setMax
                 setMinPageNumberLimit={setMinPageNumberLimit}
                 />
             </div>
+            <div className="containerVolver">
+                <Link to="/">
+                    <button className="btnVolver" >Volver</button>
+                </Link>
+                </div>        
 
             <div>
                 <OrderPoblacion 
@@ -102,6 +91,19 @@ export default function NavBar({ name, setName, setOrden, setCurrentPage, setMax
                 setMaxPageNumberLimit={setMaxPageNumberLimit}
                 setMinPageNumberLimit={setMinPageNumberLimit}
                 />
+            </div>
+
+            
+            <div>
+                <FilterContinente
+                setCurrentPage={setCurrentPage}
+                pageNumberLimit={pageNumberLimit}
+                minPageNumberLimit={minPageNumberLimit}
+                maxPageNumberLimit={maxPageNumberLimit}
+                setMaxPageNumberLimit={setMaxPageNumberLimit}
+                setMinPageNumberLimit={setMinPageNumberLimit}
+                 />
+            </div>
             </div>
 
         </div>

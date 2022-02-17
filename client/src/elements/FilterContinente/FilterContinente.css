@@ -1,10 +1,7 @@
 .continente{    
-    position: absolute; /*posicion*/
-    top: 36px; /* lo separo de la parte de arriba*/
-    margin-left: 75%; /*lo separo del borde*/
+    width: 10rem;
     background-color: transparent;/*le saca el background*/
     background: #ffffff;
-    padding: 5px 8px;
     color: rgb(248, 0, 0); /* color */    
     text-decoration: none;  /*saca decoraciones*/
     text-transform: uppercase; /*pasa a mayuscula las letras*/

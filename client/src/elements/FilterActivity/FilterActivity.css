@@ -1,11 +1,12 @@
 .activity{    
-    position: relative;
-    top: 3px;
-    margin-left: 2%;
+    /* position: relative; */
+    /* top: 3px; */
+    /* margin-left: 2%; */
+    width: 10rem;
     /* background-color: transparent; */
     background: #ffffff;
     border: none;    
-    padding: 5px 8px;
+    /* padding: 5px 8px; */
     color: rgb(255, 0, 0); /* color */    
     text-decoration: none; 
     text-transform: uppercase; 

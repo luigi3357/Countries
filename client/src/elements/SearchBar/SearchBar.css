@@ -1,17 +1,17 @@
 .inputSearch{
     position: absolute;
-    margin-left: 46%;
-    margin-top: 4.3px;
+    margin-left: -2%;
+    /* margin-top: 4.3px; */
     height: 28px;
-    width: 80px;
+    width: 100px;
     border-radius: 50px;
     border: none;
     transition: 1s;        
 }
 .inputSearch:hover{
     position: absolute;
-    margin-left: 38%;
-    margin-top: 4px;
+    margin-left: -9%;
+    /* margin-top: 4px; */
     height: 28px;
     width: 180px;
     border:none;
@@ -20,8 +20,7 @@
 }
 .inputSearch:focus{
     position: absolute;
-    margin-left: 38%;
-    margin-top: 4px;
+    margin-left: -9%;
     height: 28px;
     width: 180px;
     border:none;
@@ -30,20 +29,20 @@
 }
 
 .btnSearch{
-    position: relative;
+    position: absolute;
     background: #fff;   
-    margin-top: 4px; 
-margin-left: 328%;
-height: 28px;
-border-radius: 50px;
-width: 41px;
-font-size: 9px;
-border: none;
+     margin-left: 2%;
+    height: 28px;
+    border-radius: 50px;
+    width: 41px;
+    font-size: 9px;
+    border: none;
 }
 
 .btnSearch:hover{
     background: #689dff;
     color: rgb(255, 255, 255);
+    /* margin-left: 45%; */
     box-shadow: 0 0 100px #ffffff; 
     transition: 0.5s;
 }
